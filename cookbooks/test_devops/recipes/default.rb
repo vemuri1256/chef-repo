@@ -7,12 +7,12 @@
 
 cookbook_file "/usr/share/nginx/html/index.html" do
 	source "index.html"
-	owner root
-	group root
+	owner 'root'
+	group 'root'
 	mode "0755"
 	action :create
 		notifies :restart, 'service[nginx]'
-	not_if { cat /usr/share/nginx/html/index.html | grep "Hello World"}
+	not_if "cat /usr/share/nginx/html/index.html | grep Hello "
 end
 
 service 'nginx' do
