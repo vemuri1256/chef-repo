@@ -1,7 +1,7 @@
 server {
     server_name  localhost;
     listen 80;
-    return 301 https://<%= node['ipaddress'] %>$request_uri;
+    return 301 https://<%= node['p-ipaddress'] %>$request_uri;
 }
 
 
