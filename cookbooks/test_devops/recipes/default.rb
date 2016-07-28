@@ -27,8 +27,8 @@ end
 
 cookbook_file "/etc/nginx/ssl/cert/vemuri-devops.com.crt" do
 	source "vemuri-devops.com.crt"
-	owner root
-	group root
+	owner 'root'
+	group 'root'
 	mode "0755"
 	action :create
 	not_if { ::File.exist? "/etc/nginx/ssl/cert/vemuri-devops.com.crt"}
@@ -36,8 +36,8 @@ end
 
 cookbook_file "/etc/nginx/ssl/private/vemuri-devops.com.key" do
 	source "vemuri-devops.com.key"
-	owner root
-	group root
+	owner 'root'
+	group 'root'
 	mode "0755"
 	action :create
 	not_if { ::File.exist? "/etc/nginx/ssl/private/vemuri-devops.com.key"}
