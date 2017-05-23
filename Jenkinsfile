@@ -3,7 +3,21 @@ pipeline {
   stages {
     stage('print') {
       steps {
-        echo 'Hello world '
+        parallel(
+          "print": {
+            echo 'Hello world '
+            
+          },
+          "": {
+            sleep 20
+            sh 'echo "Hello World"'
+            timestamps() {
+              sh 'echo "thisis last"'
+            }
+            
+            
+          }
+        )
       }
     }
   }
