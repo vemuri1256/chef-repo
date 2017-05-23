@@ -8,13 +8,8 @@ pipeline {
             echo 'Hello world '
             
           },
-          "": {
+          "error": {
             sleep 20
-            sh 'echo "Hello World"'
-            timestamps() {
-              sh 'echo "thisis last"'
-            }
-            
             
           }
         )
